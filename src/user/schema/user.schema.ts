@@ -11,7 +11,7 @@ export interface User extends Document {
   email: string;
   password: string;
   iam?: string;
-  lookingFor?: string;
+  lookingFor?: string[];
   relationShipGoal?: string;
   flyToMeet?: boolean;
   preferredAge?: {
@@ -39,7 +39,7 @@ export const UserSchema = new Schema<User>(
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
     iam: { type: String },
-    lookingFor: { type: String },
+    lookingFor: { type: [String] },
     relationShipGoal: { type: String },
     flyToMeet: { type: Boolean },
     preferredAge: {

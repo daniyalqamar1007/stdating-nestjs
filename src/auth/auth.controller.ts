@@ -15,7 +15,7 @@ export class AuthController {
 
   @Post('sign-in')
   async verifyLogin(@Body() dto: { email: string; password: string }) {
-    console.log(dto)
+    console.log(dto);
     return await this.authService.login(dto.email, dto.password);
   }
 
